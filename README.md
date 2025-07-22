@@ -130,34 +130,6 @@ Truy cập tại: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## 📑 Swagger (API Documentation)
-
-Truy cập tài liệu API:
-
-```
-http://localhost:8000/api/documentation
-```
-
----
-
-## 🗂 ERD (Sơ đồ cơ sở dữ liệu)
-
-> Đính kèm trong thư mục `docs/erd.png` (nếu có)
-
-* **products**
-* **orders**
-* **order\_items**
-
----
-
-## 📦 Bonus Features (tuỳ chọn)
-
-* [x] Swagger UI
-* [ ] Docker Compose
-* [ ] Unit Test
-* [ ] CQRS với MediatR (nếu dùng .NET)
-* [ ] AutoMapper hoặc tương tự (MapStruct)
-
 
 
 ```
