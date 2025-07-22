@@ -1,61 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+## 📄 `README.md`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+````markdown
+# 🧾 Order Management System
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Hệ thống quản lý đơn hàng được phát triển với Laravel và kiến trúc Clean Architecture, áp dụng các nguyên lý DDD, RESTful API, Swagger UI.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🚀 Tính năng chính
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Quản lý sản phẩm: tạo, truy xuất danh sách sản phẩm
+- Quản lý đơn hàng: tạo đơn hàng, tính tổng tiền, VAT, tổng thanh toán
+- API RESTful chuẩn
+- Swagger UI cho tài liệu API
+- Lọc đơn hàng theo ngày
+- Áp dụng Clean Architecture & DDD
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Công nghệ sử dụng
 
-## Laravel Sponsors
+| Thành phần             | Công nghệ                     |
+|------------------------|-------------------------------|
+| Backend                | Laravel >= 10.x               |
+| ORM                    | Eloquent (Laravel ORM)        |
+| DBMS                   | MySQL / SQLite                |
+| API Docs               | Swagger UI (L5 Swagger)       |
+| Validation             | Laravel + Validator           |
+| Kiến trúc              | Clean Architecture + DDD      |
+| RESTful API            | ✅                             |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## ⚙️ Yêu cầu hệ thống
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- PHP >= 8.1
+- Composer >= 2.x
+- Laravel >= 10.x
+- Node.js + NPM (nếu có front-end)
+- MySQL / SQLite
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧪 Cài đặt & Chạy dự án
 
-## Code of Conduct
+### 1. Clone Project
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/nghiaNee/Order-Management-System.git
+cd Order-Management-System
+````
 
-## Security Vulnerabilities
+### 2. Cài đặt Laravel Packages
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer install
+```
 
-## License
+### 3. Tạo file `.env`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+cp .env.example .env
+```
+
+Cấu hình `.env` cho database (MySQL):
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=order_management
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Hoặc dùng SQLite:
+
+```
+touch database/database.sqlite
+```
+
+```env
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database/database.sqlite
+```
+
+### 4. Tạo APP Key
+
+```bash
+php artisan key:generate
+```
+
+### 5. Migration + Seed (nếu có)
+
+```bash
+php artisan migrate
+php artisan db:seed # nếu có dữ liệu mẫu
+```
+
+### 6. Chạy Server
+
+```bash
+php artisan serve
+```
+
+Truy cập tại: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 📘 API Endpoints
+
+### 🔹 Product APIs
+
+| Method | Endpoint      | Mô tả                  |
+| ------ | ------------- | ---------------------- |
+| POST   | /api/products | Tạo sản phẩm mới       |
+| GET    | /api/products | Lấy danh sách sản phẩm |
+
+### 🔹 Order APIs
+
+| Method | Endpoint         | Mô tả                      |
+| ------ | ---------------- | -------------------------- |
+| POST   | /api/orders      | Tạo đơn hàng mới           |
+| GET    | /api/orders      | Lọc đơn hàng theo ngày tạo |
+| GET    | /api/orders/{id} | Chi tiết đơn hàng          |
+
+---
+
+## 📑 Swagger (API Documentation)
+
+Truy cập tài liệu API:
+
+```
+http://localhost:8000/api/documentation
+```
+
+---
+
+## 🗂 ERD (Sơ đồ cơ sở dữ liệu)
+
+> Đính kèm trong thư mục `docs/erd.png` (nếu có)
+
+* **products**
+* **orders**
+* **order\_items**
+
+---
+
+## 📦 Bonus Features (tuỳ chọn)
+
+* [x] Swagger UI
+* [ ] Docker Compose
+* [ ] Unit Test
+* [ ] CQRS với MediatR (nếu dùng .NET)
+* [ ] AutoMapper hoặc tương tự (MapStruct)
+
+
+
+```
+
+---
+
+```
